@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BSRU friend</string>
+
+    <string name="sign_up">สมัครสมาชิค</string>
+    <string name="title_activity_service">Map</string>
+
+</resources>
