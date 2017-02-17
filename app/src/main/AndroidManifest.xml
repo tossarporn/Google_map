@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="appewtc.masterung.bsrufriend">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <!--
@@ -13,7 +14,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/kon48"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -42,7 +43,8 @@
         <activity
             android:name=".ServiceActivity"
             android:label="@string/title_activity_service" />
-        <activity android:name=".ListFriend"></activity>
+        <activity android:name=".ListFriend" />
+        <activity android:name=".DetailFriend"></activity>
     </application>
 
 </manifest>
