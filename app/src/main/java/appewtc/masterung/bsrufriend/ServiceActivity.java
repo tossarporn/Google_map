@@ -109,14 +109,17 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
             String strJSON = getUser.get();
             JSONArray jsonArray = new JSONArray(strJSON);
             for (int i=0;i<jsonArray.length();i++) {
+
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 LatLng latLng = new LatLng(Double.parseDouble(jsonObject.getString("Lat")),
                         Double.parseDouble(jsonObject.getString("Lng")));
                 mMap.addMarker(new MarkerOptions().position(latLng)
-                        .icon(BitmapDescriptorFactory.fromResource(avataInts[Integer.parseInt(jsonObject.getString("Avata"))])));
+                        .icon(BitmapDescriptorFactory.fromResource(avataInts[Integer.parseInt(jsonObject.getString("Avata"))]))
+                .title(jsonObject.getString("Name")));
 
 
             }//for
+            getUser.cancel(true);
 
         } catch (Exception e) {
 
@@ -135,6 +138,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
             boolean b = Boolean.parseBoolean(editLatLng.get());
             Log.d("17febV2", "Result==>" + b);
 
+            editLatLng.cancel(true);
 
         } catch (Exception e) {
             Log.d("17fabV2","e update ==>"+e.toString());
